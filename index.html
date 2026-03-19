@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Andrea Giraldo – Portafolio</title>
+  <link rel="stylesheet" href="style/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=Mulish:wght@300;400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ── NAVEGACIÓN ── -->
+  <header>
+    <nav>
+      <p class="logo">andrea<span>.dev</span></p>
+      <ul>
+        <li><a href="#sobre-mi">Sobre mí</a></li>
+        <li><a href="#proyectos">Proyectos</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ── HERO / SOBRE MÍ ── -->
+  <section id="sobre-mi" class="hero">
+    <div class="hero-inner">
+
+      <!-- Foto cargable -->
+      <aside class="foto-wrap" id="fotoWrap" onclick="document.getElementById('inputFoto').click()" title="Haz clic para subir tu foto">
+        <img id="fotoPerfil" class="foto-img" src="image/fotoandrea.jpeg" alt="Foto de Andrea Giraldo" />
+        <div id="fotoPlaceholder" class="foto-placeholder">
+          
+        </div>
+      </aside>
+
+      <!-- Texto -->
+      <article class="hero-texto">
+        <span class="etiqueta">Desarrolladora de Software Junior</span>
+        <h1>Hola, soy<br><em>Andrea Giraldo</em></h1>
+        <p>
+          Estudiante de Ingeniería de Software en la Universidad EAM (5.° semestre),
+          Armenia, Quindío. Me apasiona construir soluciones backend con Java y Spring Boot,
+          y estoy expandiendo mi stack hacia el frontend y mobile.
+          Aprendo rápido, trabajo bien en equipo y uso IA para acelerar el desarrollo.
+        </p>
+        <div class="hero-btns">
+          <a href="#proyectos" class="btn btn-primary">Ver proyectos</a>
+          <a href="#contacto" class="btn btn-ghost">Contáctame</a>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ── PROYECTOS ── -->
+  <section id="proyectos">
+    <div class="container">
+      <h2 class="titulo-seccion">Proyectos</h2>
+
+      <div class="grid-proyectos">
+
+        <article class="card">
+          <span class="card-anio">2025 · Equipo</span>
+          <h3>SkillForge</h3>
+          <p>Plataforma web para capacitación interna con roles de estudiante, instructor y administrador. Arquitectura MVC con Git Flow colaborativo.</p>
+          <div class="tags">
+            <span>Java</span><span>Spring Boot</span><span>Angular</span><span>MariaDB</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <span class="card-anio">2025</span>
+          <h3>App Venta de Películas</h3>
+          <p>Fullstack para gestión y venta con roles usuario/admin. API con Swagger, base de datos en Azure y desplegada en Render.</p>
+          <div class="tags">
+            <span>Spring Boot</span><span>MariaDB</span><span>Azure</span><span>Swagger</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <span class="card-anio">Universidad EAM</span>
+          <h3>Gestión de Usuarios – Vuelos</h3>
+          <p>Sistema CRUD con perfiles cliente y admin, patrón MVC y estructuras de datos (listas, pilas, colas).</p>
+          <div class="tags">
+            <span>Java</span><span>OOP</span><span>MVC</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <span class="card-anio">Universidad EAM</span>
+          <h3>Análisis de Datos con Python</h3>
+          <p>Limpieza, análisis estadístico y visualización de datasets en Google Colab: histogramas, mapas de calor y diagramas de caja.</p>
+          <div class="tags">
+            <span>Python</span><span>Pandas</span><span>Matplotlib</span><span>Seaborn</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <span class="card-anio">Universidad EAM</span>
+          <h3>Gestor de Gastos</h3>
+          <p>Sistema para gestionar y controlar los gastos personales con reportes y estadísticas.</p>
+          <div class="tags">
+            <span>Typescript</span><span>Express</span><span>Docker</span>
+          </div>
+        </article>
+
+      </div>    
+    </div>
+  </section>
+
+  <!-- ── CONTACTO ── -->
+  <section id="contacto" class="seccion-contacto">
+    <div class="container contacto-inner">
+      <h2 class="titulo-seccion claro">Hablemos</h2>
+      <p class="contacto-sub">¿Tienes un proyecto o una oportunidad? Escríbeme.</p>
+      <div class="contacto-links">
+        <a href="mailto:andreagiraldo2391@gmail.com" class="link-contacto">
+          ✉ andreagiraldo2391@gmail.com
+        </a>
+        <a href="https://github.com/andrea-2391" target="_blank" rel="noopener noreferrer" class="link-contacto">
+          ⌥ github.com/andrea-2391
+        </a>
+        <a href="https://linkedin.com/in/andrea-giraldo-vasquez" target="_blank" rel="noopener noreferrer" class="link-contacto">
+          ↗ LinkedIn
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <p>© 2025 Andrea Giraldo Vásquez · Armenia, Quindío</p>
+  </footer>
+
+  <!-- Script para cargar la foto -->
+  <script>
+    const input = document.getElementById('inputFoto');
+    const img   = document.getElementById('fotoPerfil');
+    const placeholder = document.getElementById('fotoPlaceholder');
+
+    input.addEventListener('change', function () {
+      const archivo = this.files[0];
+      if (!archivo) return;
+      const reader = new FileReader();
+      reader.onload = function (e) {
+        img.src = e.target.result;
+        img.classList.remove('oculta');
+        placeholder.classList.add('oculta');
+      };
+      reader.readAsDataURL(archivo);
+    });
+  </script>
+
+</body>
+</html>
