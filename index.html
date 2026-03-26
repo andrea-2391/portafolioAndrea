@@ -11,9 +11,18 @@
 
   <!-- ── NAVEGACIÓN ── -->
   <header>
-    <nav>
+    <nav class="navbar">
       <p class="logo">andrea<span>.dev</span></p>
-      <ul>
+      
+      <!-- Botón hamburguesa -->
+      <button class="hamburguesa" id="hamburguesa" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <!-- Menú de navegación -->
+      <ul class="nav-links" id="navLinks">
         <li><a href="#sobre-mi">Sobre mí</a></li>
         <li><a href="#proyectos">Proyectos</a></li>
         <li><a href="#tecnologias">Tecnologías</a></li>
@@ -26,12 +35,9 @@
   <section id="sobre-mi" class="hero">
     <div class="hero-inner">
 
-      <!-- Foto cargable -->
-      <aside class="foto-wrap" id="fotoWrap" onclick="document.getElementById('inputFoto').click()" title="Haz clic para subir tu foto">
-        <img id="fotoPerfil" class="foto-img" src="image/fotoandrea.jpeg" alt="Foto de Andrea Giraldo" />
-        <div id="fotoPlaceholder" class="foto-placeholder">
-          
-        </div>
+      <!-- Foto de perfil -->
+      <aside class="foto-wrap">
+        <img class="foto-img" src="image/fotoandrea.jpeg" alt="Foto de Andrea Giraldo" />
       </aside>
 
       <!-- Texto -->
@@ -250,24 +256,8 @@
     <p>© 2026 Andrea Giraldo Vásquez · Armenia, Quindío</p>
   </footer>
 
-  <!-- Script para cargar la foto -->
-  <script>
-    const input = document.getElementById('inputFoto');
-    const img   = document.getElementById('fotoPerfil');
-    const placeholder = document.getElementById('fotoPlaceholder');
-
-    input.addEventListener('change', function () {
-      const archivo = this.files[0];
-      if (!archivo) return;
-      const reader = new FileReader();
-      reader.onload = function (e) {
-        img.src = e.target.result;
-        img.classList.remove('oculta');
-        placeholder.classList.add('oculta');
-      };
-      reader.readAsDataURL(archivo);
-    });
-  </script>
+  <!-- Script para menú móvil -->
+  <script src="js/menu.js"></script>
 
 </body>
 </html>
