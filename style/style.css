@@ -371,34 +371,152 @@ footer p {
 }
 
 /* ─────────────────────────────────────────
+   TECNOLOGÍAS
+───────────────────────────────────────── */
+.seccion-tecnologias {
+  background-color: var(--bg);
+  padding: 5rem 2rem;
+}
+
+.tech-intro {
+  text-align: center;
+  color: var(--muted);
+  font-size: .95rem;
+  margin-bottom: 3rem;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.tech-categoria {
+  background-color: var(--bg2);
+  padding: 1.8rem;
+  border-radius: var(--radio);
+  border: 1px solid var(--borde);
+  transition: transform .2s, box-shadow .2s;
+}
+
+.tech-categoria:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, .06);
+}
+
+.tech-titulo {
+  font-family: var(--syne);
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--acento);
+  margin-bottom: 1.2rem;
+  text-transform: uppercase;
+  font-size: .9rem;
+  letter-spacing: .08em;
+}
+
+.tech-lista {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .6rem;
+}
+
+.tech-badge {
+  display: inline-block;
+  background-color: var(--blanco);
+  color: var(--oscuro);
+  padding: .45rem .9rem;
+  border-radius: .3rem;
+  font-size: .8rem;
+  font-weight: 500;
+  border: 1px solid var(--borde);
+  transition: all .2s;
+  cursor: default;
+}
+
+.tech-badge:hover {
+  background-color: var(--acento);
+  color: #fff;
+  border-color: var(--acento);
+  transform: scale(1.05);
+}
+
+/* ─────────────────────────────────────────
+   FORMULARIO DE CONTACTO
+───────────────────────────────────────── */
+.formulario-contacto {
+  max-width: 500px;
+  margin: 2.5rem auto 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.form-grupo {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-input,
+.form-textarea {
+  background-color: rgba(255, 255, 255, .08);
+  border: 1px solid rgba(255, 255, 255, .15);
+  border-radius: var(--radio);
+  padding: .8rem 1.2rem;
+  font-family: var(--mulish);
+  font-size: .9rem;
+  color: #fff;
+  transition: all .2s;
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: #a09e98;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  outline: none;
+  background-color: rgba(255, 255, 255, .12);
+  border-color: var(--acento2);
+  box-shadow: 0 0 0 3px rgba(232, 135, 74, .1);
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 140px;
+  font-family: var(--mulish);
+}
+
+.btn-submit {
+  margin-top: 1rem;
+  align-self: center;
+  min-width: 200px;
+}
+
+.contacto-links-alt {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, .1);
+}
+
+.o-contacto {
+  color: #a09e98;
+  font-size: .85rem;
+  margin-bottom: 1.5rem;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+/* ─────────────────────────────────────────
    RESPONSIVE
 ───────────────────────────────────────── */
 @media (max-width: 700px) {
-  .hero-inner {
+  .tech-grid {
     grid-template-columns: 1fr;
-    gap: 2.5rem;
-    text-align: center;
-  }
-
-  .foto-wrap {
-    margin: 0 auto;
-  }
-
-  .hero-texto p {
-    margin: 0 auto 2rem;
-  }
-
-  .hero-btns {
-    justify-content: center;
-  }
-
-  nav ul {
-    gap: 1.2rem;
-  }
-}
-
-@media (max-width: 480px) {
-  nav ul {
-    display: none;
   }
 }
